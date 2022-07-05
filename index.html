@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>REPORTE DE BALANCE HIDRICO - BALANCE PERITONIAL</h1>
+    <div id="info-paciente">
+        <table>
+            <tr>
+                <td>PACIENTE</td>
+                <td><input type="text" placeholder="Nombre"></td>
+            </tr>
+            <tr>
+                <td>FECHA</td>
+                <td><input type="datetime-local" placeholder="Nombre"></td>
+            </tr>
+            <tr>
+                <td>SISTEMA</td>
+                <td><select name="Tipo Sistema" id="">
+                    <option value="1">Baxter</option>
+                    <option value="2">Fresenius Medical Care</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>P/A</td>
+                <td><input type="text" placeholder="Nombre"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="data">
+        <table border="1">
+            <tr>
+                <td rowspan="2">Recambio</td>
+                <td colspan="2">Fase I</td>
+                <td colspan="2">Fase II</td>
+                <td rowspan="2">Balance</td>
+            </tr>
+            <tr>
+                <td>CONSENTRACIÓN</td>
+                <td>INFUSIÓN</td>
+                <td>DRENAJE</td>
+                <td>CUALIDAD</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><select name="" id="">
+                    <option value="0.0125">1.25%</option>
+                    <option value="0.025">2.50%</option>
+                    <option value="0.075">7.5%</option>
+                </select></td>
+                <td>2000 ml</td>
+                <td><input id="DRENAJE1" type="number"></td>
+                <td><select name="" id="">
+                    <option value="1">Claro</option>
+                    <option value="2">Turbio</option>
+                </select></td>
+                <td id="TOTAL_BALANCE1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><select name="" id="">
+                    <option value="0.0125">1.25%</option>
+                    <option value="0.025">2.50%</option>
+                    <option value="0.075">7.5%</option>
+                </select></td>
+                <td>2000 ml</td>
+                <td><input id="DRENAJE2" type="number"></td>
+                <td><select name="" id="">
+                    <option value="1">Claro</option>
+                    <option value="2">Turbio</option>
+                </select></td>
+                <td id="TOTAL_BALANCE2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><select name="" id="">
+                    <option value="0.0125">1.25%</option>
+                    <option value="0.025">2.50%</option>
+                    <option value="0.075">7.5%</option>
+                </select></td>
+                <td>2000 ml</td>
+                <td><input id="DRENAJE3" type="number"></td>
+                <td><select name="" id="">
+                    <option value="1">Claro</option>
+                    <option value="2">Turbio</option>
+                </select></td>
+                <td id="TOTAL_BALANCE3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><select name="" id="">
+                    <option value="0.0125">1.25%</option>
+                    <option value="0.025">2.50%</option>
+                    <option value="0.075">7.5%</option>
+                </select></td>
+                <td>2000 ml</td>
+                <td><input id="DRENAJE4" type="number"></td>
+                <td><select name="" id="">
+                    <option value="1">Claro</option>
+                    <option value="2">Turbio</option>
+                </select></td>
+                <td id="TOTAL_BALANCE4"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td id="TOTAL_INFUSION "></td>
+                <td id="TOTAL_DRENAJE"></td>
+                <td></td>
+                <td id="TOTAL_BALANCE_FINAL"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="buttons">
+        <button>Calcular</button>
+        <button>Descargar</button>
+        <button>Gráfico</button>
+    </div>
+</body>
+</html>
