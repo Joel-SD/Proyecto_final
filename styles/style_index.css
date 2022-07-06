@@ -15,11 +15,20 @@ h2{
 .info-paciente {
     display: flex;
     justify-content: space-around;
-    min-width: 650px;
+    max-width: 650px;
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 5px;
     margin-top: 30px;
+}
+
+.fecha {
+    max-width: 250px;
+}
+
+.presion {
+    max-width: 125px;
+    margin: 0 3% 0 0; 
 }
 
 .info-paciente-tabla tr td{
@@ -39,4 +48,65 @@ h2{
     flex-direction: row;
     justify-content: space-around;
     min-width: 350px; 
+}
+
+.resultados{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    min-width: 500px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+div.resultadoNombre {
+    display: flex;
+}
+
+#resultadoBalance {
+    width: 100%;
+}
+
+#resultadoPresion {
+    width: 100%;
+} 
+
+#nombreResultado{
+    text-align:start;
+}
+
+.window-resultados {
+    background: rgba(33, 41, 52, .85);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+}
+
+.window-resultados .content {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+    min-width: 320px !important;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+
+.btn-detalle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

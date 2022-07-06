@@ -22,7 +22,7 @@
                 <td>PACIENTE</td>
                 <td><input id="nombre" class="form-control input" type="text" placeholder="Nombre Completo" required></td>
                 <td>FECHA</td>
-                <td><input class="form-control input" value="" id="fecha" type="datetime-local" required></td>
+                <td><input class="form-control input fecha" value="" id="fecha" type="datetime-local" required></td>
             </tr>
             <tr>
                 <td>SISTEMA</td>
@@ -32,7 +32,7 @@
                     <option value="2">Fresenius Medical Care</option>
                 </select></td>
                 <td>P/A</td>
-                <td><input class="form-control input" type="text" placeholder="Presión Arterial" required></td>
+                <td style="display: flex;"><input class="form-control input presion" type="number" placeholder="Sistólica" required><span style="margin-right: 3%;">/</span><input class="form-control input presion" type="number" placeholder="Diastólica" required></td>
             </tr>
         </table>
     </div>
@@ -63,8 +63,8 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input" id="DRENAJE1" type="number" placeholder="0"></td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><input class="form-control input drenaje" id="DRENAJE1" type="number" placeholder="0"></td>
+                    <td><select class="form-select input" name="" id="condicion1">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
                         <option value="2">Turbio</option>
@@ -80,8 +80,8 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input" id="DRENAJE2" type="number" placeholder="0"></td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><input class="form-control input drenaje" id="DRENAJE2" type="number" placeholder="0"></td>
+                    <td><select class="form-select input" name="" id="condicion2">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
                         <option value="2">Turbio</option>
@@ -97,8 +97,8 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input" id="DRENAJE3" type="number" placeholder="0"></td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><input class="form-control input drenaje" id="DRENAJE3" type="number" placeholder="0"></td>
+                    <td><select class="form-select input" name="" id="condicion3">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
                         <option value="2">Turbio</option>
@@ -114,8 +114,8 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input" id="DRENAJE4" type="number" placeholder="0"></td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><input class="form-control input drenaje" id="DRENAJE4" type="number" placeholder="0"></td>
+                    <td><select class="form-select input condicion" name="" id="condicion4">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
                         <option value="2">Turbio</option>
@@ -137,9 +137,34 @@
     </div>
     <div class="buttons">
         <button id="calcular" disabled="disabled" class="btn btn-secondary">CALCULAR</button>
-        <button class="btn btn-secondary">Descargar</button>
-        <button class="btn btn-secondary">Gráfico</button>
+        <button id="detalle" class="btn btn-secondary">Ver Detalle</button>
+        <!-- <button class="btn btn-secondary">Gráfico</button> -->
     </div>
-<!-- </form> -->
+    <div class="window-resultados" id="window-resultados">
+        <div class="content">
+            <table>
+                <thead class="text-center">
+                    <th colspan="2">Análisis de Resultados del Balance Hídrico</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="max-width: 75px;"><p style="width: 100%;">Nombre del paciente:</p></td>
+                        <td><p id="nombre_resultado">Cesar Iglesias</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="resultadoBalance"></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="resultadoPresion"></p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-detalle">
+                <button id="descargar">DESCARGAR</button>
+                <button id="grafica">GRÁFICO</button>
+                <button id="cerrar-detalle">CERRAR</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
