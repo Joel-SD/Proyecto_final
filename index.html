@@ -63,7 +63,9 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input drenaje" id="DRENAJE1" type="number" placeholder="0"></td>
+                    <td style="display: flex;"><input class="form-control input drenaje" id="DRENAJE1" type="number" placeholder="0">
+                        <p style="margin: 5px 0 0 5px;">ml</p>
+                    </td>
                     <td><select class="form-select input" name="" id="condicion1">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
@@ -80,7 +82,9 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input drenaje" id="DRENAJE2" type="number" placeholder="0"></td>
+                    <td style="display: flex;"><input class="form-control input drenaje" id="DRENAJE2" type="number" placeholder="0">
+                        <p style="margin: 5px 0 0 5px;">ml</p>
+                    </td>
                     <td><select class="form-select input" name="" id="condicion2">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
@@ -97,7 +101,9 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input drenaje" id="DRENAJE3" type="number" placeholder="0"></td>
+                    <td  style="display: flex;"><input class="form-control input drenaje" id="DRENAJE3" type="number" placeholder="0">
+                        <p style="margin: 5px 0 0 5px;">ml</p>
+                    </td>
                     <td><select class="form-select input" name="" id="condicion3">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
@@ -114,7 +120,9 @@
                         <option value="0.075">7.5%</option>
                     </select></td>
                     <td>2000 ml</td>
-                    <td><input class="form-control input drenaje" id="DRENAJE4" type="number" placeholder="0"></td>
+                    <td  style="display: flex;"><input class="form-control input drenaje" id="DRENAJE4" type="number" placeholder="0">
+                        <p style="margin: 5px 0 0 5px;">ml</p>
+                    </td>
                     <td><select class="form-select input condicion" name="" id="condicion4">
                         <option value="" selected hidden>Elegir</option>
                         <option value="1">Claro</option>
@@ -127,7 +135,7 @@
                 <tr>
                     <td>Total</td>
                     <td></td>
-                    <td id="TOTAL_INFUSION "></td>
+                    <td id="TOTAL_INFUSION"></td>
                     <td id="TOTAL_DRENAJE"></td>
                     <td></td>
                     <td id="TOTAL_BALANCE_FINAL"></td>
@@ -137,7 +145,7 @@
     </div>
     <div class="buttons">
         <button id="calcular" disabled="disabled" class="btn btn-secondary">CALCULAR</button>
-        <button id="detalle" class="btn btn-secondary">Ver Detalle</button>
+        <button id="detalle" class="btn btn-secondary">VER DETALLE</button>
         <!-- <button class="btn btn-secondary">Gráfico</button> -->
     </div>
     <div class="window-resultados" id="window-resultados">
@@ -148,8 +156,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="max-width: 75px;"><p style="width: 100%;">Nombre del paciente:</p></td>
-                        <td><p id="nombre_resultado">Cesar Iglesias</p></td>
+                        <td style="width: 35%;"><p style="max-width: 250px; margin-right: 0;">Nombre del paciente:</p></td>
+                        <td style="width: 65%;"><p id="nombre_resultado">Cesar Iglesias</p></td>
                     </tr>
                     <tr>
                         <td colspan="2"><p id="resultadoBalance"></p></td>
@@ -160,9 +168,9 @@
                 </tbody>
             </table>
             <div class="btn-detalle">
-                <button id="descargar">DESCARGAR</button>
-                <button id="grafica">GRÁFICO</button>
-                <button id="cerrar-detalle">CERRAR</button>
+                <button class="btn btn-secondary" id="descargar">DESCARGAR</button>
+                <button class="btn btn-secondary" id="grafica">GRÁFICO</button>
+                <button class="btn btn-secondary" id="cerrar-detalle">CERRAR</button>
             </div>
         </div>
     </div>

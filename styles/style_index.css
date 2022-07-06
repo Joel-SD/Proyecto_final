@@ -61,9 +61,9 @@ h2{
     padding: 10px;
 }
 
-div.resultadoNombre {
+/* div.resultadoNombre {
     display: flex;
-}
+} */
 
 #resultadoBalance {
     width: 100%;
@@ -109,4 +109,18 @@ div.resultadoNombre {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+#TOTAL_BALANCE_FINAL{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#TOTAL_BALANCE_FINAL > p{
+    margin-left: 5px;
+}
+
+strong {
+    color: red;
 }
