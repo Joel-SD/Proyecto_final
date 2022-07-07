@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    
+
     $("#window-resultados").hide();
     $("#detalle").hide();
     $("#fecha").val(function(){
@@ -37,8 +37,6 @@ $(document).ready(function(){
 
         $("#TOTAL_BALANCE_FINAL").html("<p id=\"sumaTotalBalance\">"+Number(8000-sumaDrenaje)+"</p><p> ml</p>");
 
-        sumaDrenaje = 0;
-
         $("#detalle").show();
 
         if($("#condicion1").val()==2){
@@ -57,6 +55,39 @@ $(document).ready(function(){
         if(contTurbio >= 2){
             alert("Consulte de inmediato con su néfrologo y programe su cita en la unidad de diálisis");
         }
+
+        // $.ajax({
+        //     url     : 'data.json',
+        //     method  : "POST",
+        //     data    : { 'nombre': $("#nombre").val(),
+        //                 'fecha': $("#fecha").val(),
+        //                 'sistema': $("#sistema option:selected").text(),
+        //                 'presionArterial': $("#sistolica").val() + "/" + $("#diastolica").val(),
+        //                 'totalInfusion': 8000,
+        //                 'totalDrenaje': sumaDrenaje,
+        //                 'totalBalance': Number(8000-sumaDrenaje)
+        //             },
+        //     contentType: "application/json; charset=utf-8",
+        //     dataType: "json",
+        //     success : function( response ) {
+        //         alert( response );
+        //     },
+        //     error: function (xhr) { console.log(xhr.responseText);
+        //     }
+        // });
+
+        $.post("http://127.0.0.1:5500//scripts/data.json", {'nombre': $("#nombre").val(),
+                             'fecha': $("#fecha").val(),
+                             'sistema': $("#sistema option:selected").text(),
+                             'presionArterial': $("#sistolica").val() + "/" + $("#diastolica").val(),
+                             'totalInfusion': 8000,
+                             'totalDrenaje': sumaDrenaje,
+                             'totalBalance': Number(8000-sumaDrenaje)
+        }, function(status) {
+            alert(status);
+        });
+
+        sumaDrenaje = 0;
 
         console.log(contTurbio);
     });
@@ -101,9 +132,9 @@ $(document).ready(function(){
         });
 
         if (empty) {
-            $('#calcular').attr('disabled', 'disabled'); 
+            $('#calcular').attr('disabled', 'disabled');
         } else {
-            $('#calcular').removeAttr('disabled'); 
+            $('#calcular').removeAttr('disabled');
         }
     });
 
@@ -113,7 +144,7 @@ $(document).ready(function(){
 
     $("#grafica").click(function(){
         var ventana = window.open('./grafico.html');
-        ventana.focus(); 
+        ventana.focus();
     }).css('cursor', 'pointer');
 })
 
