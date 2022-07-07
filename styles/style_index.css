@@ -4,11 +4,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
-    margin: 0;
+    padding: 0;
+    background-color: #a7c2eb;
 }
 
-h2{
+h2 {
     max-width: 600px;
 }
 
@@ -28,29 +28,29 @@ h2{
 
 .presion {
     max-width: 125px;
-    margin: 0 3% 0 0; 
+    margin: 0 3% 0 0;
 }
 
-.info-paciente-tabla tr td{
+.info-paciente-tabla tr td {
     padding: 5px;
 }
 
-.data{
+.data {
     margin-top: 20px;
     background-color: #FFFFFF;
     min-width: 800px;
     border-radius: 10px;
 }
 
-.buttons{
+.buttons {
     margin-top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    min-width: 350px; 
+    min-width: 350px;
 }
 
-.resultados{
+.resultados {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -71,10 +71,10 @@ h2{
 
 #resultadoPresion {
     width: 100%;
-} 
+}
 
-#nombreResultado{
-    text-align:start;
+#nombreResultado {
+    text-align: start;
 }
 
 .window-resultados {
@@ -111,16 +111,30 @@ h2{
     justify-content: space-around;
 }
 
-#TOTAL_BALANCE_FINAL{
+#TOTAL_BALANCE_FINAL {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-#TOTAL_BALANCE_FINAL > p{
+#TOTAL_BALANCE_FINAL>p {
     margin-left: 5px;
 }
 
 strong {
     color: red;
+}
+
+div.grafica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+button {
+    margin-bottom: 10px;
 }

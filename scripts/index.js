@@ -3,6 +3,7 @@ $(document).ready(function(){
 
     $("#window-resultados").hide();
     $("#detalle").hide();
+    $("#reset").hide();
     $("#fecha").val(function(){
         let fecha = new Date();
         fecha.setHours(fecha.getHours()-5);
@@ -56,40 +57,30 @@ $(document).ready(function(){
             alert("Consulte de inmediato con su néfrologo y programe su cita en la unidad de diálisis");
         }
 
-        // $.ajax({
-        //     url     : 'data.json',
-        //     method  : "POST",
-        //     data    : { 'nombre': $("#nombre").val(),
-        //                 'fecha': $("#fecha").val(),
-        //                 'sistema': $("#sistema option:selected").text(),
-        //                 'presionArterial': $("#sistolica").val() + "/" + $("#diastolica").val(),
-        //                 'totalInfusion': 8000,
-        //                 'totalDrenaje': sumaDrenaje,
-        //                 'totalBalance': Number(8000-sumaDrenaje)
-        //             },
-        //     contentType: "application/json; charset=utf-8",
-        //     dataType: "json",
-        //     success : function( response ) {
-        //         alert( response );
-        //     },
-        //     error: function (xhr) { console.log(xhr.responseText);
-        //     }
-        // });
-
-        $.post("http://127.0.0.1:5500//scripts/data.json", {'nombre': $("#nombre").val(),
-                             'fecha': $("#fecha").val(),
-                             'sistema': $("#sistema option:selected").text(),
-                             'presionArterial': $("#sistolica").val() + "/" + $("#diastolica").val(),
-                             'totalInfusion': 8000,
-                             'totalDrenaje': sumaDrenaje,
-                             'totalBalance': Number(8000-sumaDrenaje)
-        }, function(status) {
-            alert(status);
-        });
+        const myObj = { nombre: $("#nombre").val(),
+                         fecha: $("#fecha").val(),
+                         sistema: $("#sistema option:selected").text(),
+                         presionArterial: $("#sistolica").val() + "/" + $("#diastolica").val(),
+                         drenaje1: $("#DRENAJE1").val(),
+                         drenaje2: $("#DRENAJE2").val(),
+                         drenaje3: $("#DRENAJE3").val(),
+                         drenaje4: $("#DRENAJE4").val(),
+                         balance1: Number(2000 - $("#DRENAJE1").val()) ,
+                         balance2: Number(2000 - $("#DRENAJE2").val()) ,
+                         balance3: Number(2000 - $("#DRENAJE3").val()) ,
+                         balance4: Number(2000 - $("#DRENAJE4").val()) 
+                     };
+        const myJSON = JSON.stringify(myObj);
+        localStorage.setItem("data", myJSON);
 
         sumaDrenaje = 0;
 
         console.log(contTurbio);
+
+        $("select").attr("disabled","disabled");
+        $("input").attr("disabled","disabled");
+        $('#calcular').attr('disabled', 'disabled');
+        $("#reset").show();
     });
 
     $("#detalle").click(function(){
@@ -120,6 +111,10 @@ $(document).ready(function(){
                 $("#resultadoBalance").html("<p>Balance Hídrico Favorable. Condición normal, no hay retención de líquidos.</p>");
             }
         }
+    });
+
+    $("#reset").click(function(){
+        location.reload();
     });
 
     $(".input").change(function() {
