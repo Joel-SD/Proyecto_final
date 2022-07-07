@@ -14,8 +14,7 @@
     <title>Document</title>
 </head>
 <body style="--bs-body-bg: #a7c2eb;">
-    <h2 class="text-wrap text-center">REPORTE DE BALANCE HIDRICO BALANCE PERITONIAL</h2>
-    <!-- <form id="formulario"> -->
+    <h2 class="text-center">REPORTE DE BALANCE HIDRICO BALANCE PERITONIAL</h2>
     <div class="info-paciente">
         <table class="info-paciente-tabla">
             <tr>
@@ -32,7 +31,7 @@
                     <option value="2">Fresenius Medical Care</option>
                 </select></td>
                 <td>P/A</td>
-                <td style="display: flex;"><input id="sistolica" class="form-control input presion" type="number" placeholder="Sistólica" required><span style="margin-right: 3%;">/</span><input id="diastolica" class="form-control input presion" type="number" placeholder="Diastólica" required></td>
+                <td style="display: flex;"><input id="sistolica" class="form-control input presion" type="number" min="80" placeholder="Sistólica" required><span style="margin-right: 3%;">/</span><input id="diastolica" class="form-control input presion" type="number" min="60" placeholder="Diastólica" required></td>
             </tr>
         </table>
     </div>
@@ -147,13 +146,12 @@
         <button id="calcular" disabled="disabled" class="btn btn-secondary">CALCULAR</button>
         <button id="detalle" class="btn btn-secondary">VER DETALLE</button>
         <button id="reset" class="btn btn-secondary">LIMPIAR</button>
-        <!-- <button class="btn btn-secondary">Gráfico</button> -->
     </div>
     <div class="window-resultados" id="window-resultados">
         <div class="content">
             <table>
                 <thead class="text-center">
-                    <th colspan="2">Análisis de Resultados del Balance Hídrico</th>
+                    <th colspan="2"><h3>Análisis de Resultados del Balance Hídrico</h3></th>
                 </thead>
                 <tbody>
                     <tr>
