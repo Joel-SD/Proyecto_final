@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#email").hide();
   })
   
-  $("#calcular").click(function(){
+  $("#detalle").click(function(){
     $("#email").show();
   })
   
