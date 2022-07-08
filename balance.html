@@ -10,6 +10,7 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous">
     </script>
+    <script src="./scripts/html2pdf.bundle.min.js"></script>
     <script src="./scripts/balance.js"></script>
     <title>Document</title>
 </head>
@@ -55,7 +56,7 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><select class="form-select input" name="" id="concentracion1">
                         <option value="" selected hidden>Elegir</option>
                         <option value="0.0125">1.25%</option>
                         <option value="0.025">2.50%</option>
@@ -74,7 +75,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><select class="form-select input" name="" id="concentracion2">
                         <option value="" selected hidden>Elegir</option>
                         <option value="0.0125">1.25%</option>
                         <option value="0.025">2.50%</option>
@@ -93,7 +94,7 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><select class="form-select input" name="" id="concentracion3">
                         <option value="" selected hidden>Elegir</option>
                         <option value="0.0125">1.25%</option>
                         <option value="0.025">2.50%</option>
@@ -112,7 +113,7 @@
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td><select class="form-select input" name="" id="">
+                    <td><select class="form-select input" name="" id="concentracion4">
                         <option value="" selected hidden>Elegir</option>
                         <option value="0.0125">1.25%</option>
                         <option value="0.025">2.50%</option>
@@ -156,7 +157,7 @@
                 <tbody>
                     <tr>
                         <td style="width: 35%;"><p style="max-width: 250px; margin-right: 0;">Nombre del paciente:</p></td>
-                        <td style="width: 65%;"><p id="nombre_resultado">Cesar Iglesias</p></td>
+                        <td style="width: 65%;"><p id="nombre_resultado"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2"><p id="resultadoBalance"></p></td>
@@ -167,7 +168,7 @@
                 </tbody>
             </table>
             <div class="btn-detalle">
-                <button class="btn btn-secondary" id="descargar">DESCARGAR</button>
+                <button class="btn btn-secondary"  id="descargar">DESCARGAR</button>
                 <button class="btn btn-secondary" id="grafica">GRÁFICO</button>
                 <button class="btn btn-secondary" id="cerrar-detalle">CERRAR</button>
             </div>

@@ -125,6 +125,14 @@ $(document).ready(function(){
         ventana.focus();
     });
 
+   $("#descargar").click(function(){
+        var popout = window.open("./pdfReporte.html", '_blank', 'toolbar=0,location=0,menubar=0');
+        window.setTimeout(function(){
+            popout.close();
+        }, 500);
+   });
+    
+
     //* Analiza el nivel de turbiedad */
 
     function analisisTurbiedad(cont){
@@ -200,14 +208,24 @@ $(document).ready(function(){
             fecha: $("#fecha").val(),
             sistema: $("#sistema option:selected").text(),
             presionArterial: $("#sistolica").val() + "/" + $("#diastolica").val(),
+            concentracion1: $("#concentracion1 option:selected").text(),
+            concentracion2: $("#concentracion2 option:selected").text(),
+            concentracion3: $("#concentracion3 option:selected").text(),
+            concentracion4: $("#concentracion4 option:selected").text(),
             drenaje1: $("#DRENAJE1").val(),
             drenaje2: $("#DRENAJE2").val(),
             drenaje3: $("#DRENAJE3").val(),
             drenaje4: $("#DRENAJE4").val(),
+            condicion1: $("#condicion1 option:selected").text(),
+            condicion2: $("#condicion2 option:selected").text(),
+            condicion3: $("#condicion3 option:selected").text(),
+            condicion4: $("#condicion4 option:selected").text(),
             balance1: Number(2000 - $("#DRENAJE1").val()) ,
             balance2: Number(2000 - $("#DRENAJE2").val()) ,
             balance3: Number(2000 - $("#DRENAJE3").val()) ,
-            balance4: Number(2000 - $("#DRENAJE4").val()) 
+            balance4: Number(2000 - $("#DRENAJE4").val()) ,
+            resultadoBalance: $("#resultadoBalance").html(),
+            resultadoPresion: $("#resultadoPresion").html()
         };
         const myJSON = JSON.stringify(myObj);
         localStorage.setItem("data", myJSON);

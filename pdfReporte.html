@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <script type="module" src="./scripts/PDF.js"></script>
+    <script src="./scripts/html2pdf.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items:center; justify-content:left;">
+    <h3>RESUMEN ANÁLISIS DE BALANCE HÍDRICO</h3>
+    <table style="width: 100%"">
+        <tr>
+            <!-- <td style="text-align: right; max-width: 35%;">NOMBRE DEL PACIENTE:</td> -->
+            <td style="text-align: left;" id="nombrePaciente"></td>
+        <tr>
+            <!-- <td style="text-align: right; max-width: 35%;"">FECHA:</td> -->
+            <td style="text-align: left;" id="fechaAnalisis"></td>
+        </tr>
+        </tr>
+        <tr>
+            <!-- <td style="text-align: right; max-width: 35%;"">SISTEMA:</td> -->
+            <td style="text-align: left;" id="sistema"></td>
+        </tr>
+        <tr>
+            <!-- <td style="text-align: right; max-width: 35%;"">PRESIÓN ARTERIAL</td> -->
+            <td style="text-align: left;" id="presionArterial"></td>
+        </tr>
+    </table>
+    <table id="tablaPDF" class="table table-hover align-middle text-center">
+        <thead class="text-center">
+            <tr>
+                <th rowspan="2">Recambio</th>
+                <th  colspan="2">Fase I</th>
+                <th colspan="2">Fase II</th>
+                <th style="width: 20%;" rowspan="2">Balance</th>
+            </tr>
+            <tr>
+                <th>CONSENTRACIÓN</th>
+                <th>INFUSIÓN</th>
+                <th style="width: 20%">DRENAJE</th>
+                <th>CUALIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><p id="concentracion1"></p></td>
+                <td>2000 ml</td>
+                <td><p id="drenaje1"></p></td>
+                <td><p id="condicion1"></p></td>
+                <td id="TOTAL_BALANCE1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><p id="concentracion2"></p></td>
+                <td>2000 ml</td>
+                <td><p id="drenaje2"></p></td>
+                <td><p id="condicion2"></p></td>
+                <td id="TOTAL_BALANCE2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><p id="concentracion3"></p></td>
+                <td>2000 ml</td>
+                <td><p id="drenaje3"></p></td>
+                <td><p id="condicion3"></p></td>
+                <td id="TOTAL_BALANCE3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><p id="concentracion4"></p></td>
+                <td>2000 ml</td>
+                <td><p id="drenaje4"></p></td>
+                <td><p id="condicion4"></p></td>
+                <td id="TOTAL_BALANCE4"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td id="TOTAL_INFUSION"></td>
+                <td id="TOTAL_DRENAJE"></td>
+                <td></td>
+                <td id="TOTAL_BALANCE_FINAL"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="content">
+        <table>
+            <thead class="text-center">
+                <th colspan="2"><h3>Análisis de Resultados del Balance Hídrico</h3></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2"><p id="resultadoBalance"></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p id="resultadoPresion"></p></td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+</body>
+</html>
