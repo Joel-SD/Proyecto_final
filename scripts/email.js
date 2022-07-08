@@ -1,11 +1,12 @@
 $(document).ready(function(){
     $("#email").hide();
   })
-  
+  //Mostrar form del email al clickear el boton *Detalle*
   $("#detalle").click(function(){
     $("#email").show();
   })
   
+  //Funcion para llenar el formulario del email automaticamente, se hace al presionar el boton *Detalle*
   function llenarEmail(){
     var fill = document.getElementById("asunto")
     fill.value = document.getElementById("nombre").value + " Alerta DP"
@@ -13,6 +14,7 @@ $(document).ready(function(){
     desc.value = fecha.value + "\n" + document.getElementById("nombre").value +"\n"+ document.getElementById("resultadoBalance").innerText + "\n" + document.getElementById("resultadoPresion").innerText
   }
   
+  //Funcion para enviar el email, proporcionado por el recurso STMP
   function enviarEmail(){
       Email.send({
           Host : "smtp.elasticemail.com",
@@ -27,6 +29,7 @@ $(document).ready(function(){
       );
   }
   
+  //Ocultar form del email al enviarlo
   $("#btn").click(function(){
     $("#email").hide();
   })
