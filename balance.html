@@ -46,7 +46,7 @@
                     <th style="width: 20%;" rowspan="2">Balance</th>
                 </tr>
                 <tr>
-                    <th>CONSENTRACIÓN</th>
+                    <th>CONCENTRACIÓN</th>
                     <th>INFUSIÓN</th>
                     <th style="width: 20%">DRENAJE</th>
                     <th>CUALIDAD</th>
@@ -145,7 +145,7 @@
     </div>
     <div class="buttons">
         <button id="calcular" disabled="disabled" class="btn btn-secondary">CALCULAR</button>
-        <button id="detalle" class="btn btn-secondary">VER DETALLE</button>
+        <button id="detalle" class="btn btn-secondary" onclick="llenarEmail()">VER DETALLE</button>
         <button id="reset" class="btn btn-secondary">LIMPIAR</button>
     </div>
     <div class="window-resultados" id="window-resultados">
@@ -174,5 +174,15 @@
             </div>
         </div>
     </div>
+    <div id="email" class="email">
+        <form onsubmit="enviarEmail(); reset(); return false;">        
+        <label>Para</label><input type="email" id="destinatario" value="alfonsodelcid14@gmail.com" required>
+        <label>Asunto</label><input type="text" id="asunto" placeholder="Paciente: nombre_paciente (Alerta DP)" required>
+        <label>Mensaje</label> <textarea id="mensaje" rows="5" placeholder="Reporte del dia...."></textarea>
+            <button id="btn" type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>   
+    <script src="./scripts/email.js"></script>
 </body>
 </html>
