@@ -46,8 +46,4 @@
                  }
                 }
         });
-
-        $("#nombre-paciente").html("<p>"+data.nombre+"</p>");
-        $("#sistema-drenaje").html("<p>"+data.sistema+"</p>");
-        $("#fecha-prueba").html("<p>"+data.fecha+"</p>");
     });

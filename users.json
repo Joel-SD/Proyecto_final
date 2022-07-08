@@ -1,0 +1,11 @@
+[
+    {
+        "user": "USUARIO_MD",
+        "passwordd": "enfermeriadp"
+    },
+
+    {
+        "user":"USUARIO_PD",
+        "passwordd": "pacientedp"
+    }
+]

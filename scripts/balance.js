@@ -123,7 +123,7 @@ $(document).ready(function(){
     $("#grafica").click(function(){
         var ventana = window.open('./grafico.html');
         ventana.focus();
-    }).css('cursor', 'pointer');
+    });
 
     //* Analiza el nivel de turbiedad */
 
