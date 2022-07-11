@@ -1,10 +1,6 @@
 $(document).ready(function(){
     $("#email").hide();
   })
-  //Mostrar form del email al clickear el boton *Detalle*
-  $("#detalle").click(function(){
-    $("#email").show();
-  })
   
   //Funcion para llenar el formulario del email automaticamente, se hace al presionar el boton *Detalle*
   function llenarEmail(){
@@ -18,10 +14,10 @@ $(document).ready(function(){
   function enviarEmail(){
       Email.send({
           Host : "smtp.elasticemail.com",
-          Username : "hamundohamundo@gmail.com",
-          Password : "D9423D323247D368AF16EF26E1EDB30D6797",
+          Username : "alfonsodelcid14@gmail.com",
+          Password : "2A2B25BA300EA0B73D5CF394B559FFB615E3",
           To : document.getElementById("destinatario").value,
-          From : "hamundohamundo@gmail.com",
+          From : "alfonsodelcid14@gmail.com",
           Subject : document.getElementById("asunto").value,
           Body : document.getElementById("mensaje").value 
       }).then(
@@ -29,7 +25,3 @@ $(document).ready(function(){
       );
   }
   
-  //Ocultar form del email al enviarlo
-  $("#btn").click(function(){
-    $("#email").hide();
-  })

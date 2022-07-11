@@ -155,7 +155,7 @@
         <button id="reset" class="btn btn-secondary">LIMPIAR</button>
     </div>
     <div class="window-resultados" id="window-resultados">
-        <div class="content">
+        <div class="content">   
             <table>
                 <thead class="text-center">
                     <th colspan="2"><h3>Análisis de Resultados del Balance Hídrico</h3></th>
@@ -175,19 +175,20 @@
             </table>
             <div class="btn-detalle">
                 <button class="btn btn-secondary"  id="descargar">DESCARGAR</button>
+                <button class="btn btn-secondary"  id="correo" onclick="enviarEmail()">EMAIL</button>
                 <button class="btn btn-secondary" id="grafica">GRÁFICO</button>
                 <button class="btn btn-secondary" id="cerrar-detalle">CERRAR</button>
             </div>
         </div>
     </div>
+
+ 
     <div id="email" class="email">
-        <form onsubmit="enviarEmail(); reset(); return false;">        
-        <label>Para</label><input type="email" id="destinatario" value="alfonsodelcid14@gmail.com" required>
+        <label>Para</label><input type="email" id="destinatario" value="alfonso.delcid@utp.ac.pa" required>
         <label>Asunto</label><input type="text" id="asunto" placeholder="Paciente: nombre_paciente (Alerta DP)" required>
         <label>Mensaje</label> <textarea id="mensaje" rows="5" placeholder="Reporte del dia...."></textarea>
-            <button id="btn" type="submit">Enviar</button>
-        </form>
     </div>
+ 
     <script src="https://smtpjs.com/v3/smtp.js"></script>   
     <script src="./scripts/email.js"></script>
 </body>
