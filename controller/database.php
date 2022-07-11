@@ -1,8 +1,8 @@
 <?php
-$conexion = mysqli_connect(
-    'localhost',
-    'root',
-    '',
-    'clinica_dialisis'
-);
+    $conexion = mysqli_connect(
+        'localhost',
+        'root',
+        '',
+        'clinica_dialisis'
+    );
 ?>

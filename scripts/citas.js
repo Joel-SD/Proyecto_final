@@ -8,7 +8,28 @@
                 $("#ocultar").hide();
             }
 
-        })
+    });
+
+    $("#cedula").keyup(function () { 
+        $.ajax({
+            url: 'controller/buscarPaciente.php',
+            type: 'POST',
+            data: {cedula: $("#cedula").val()},
+        
+            }).done(function(res){
+                if (!res == "") {
+                    alert("Usuario en sistema: "+res);
+                    $("#nombre").val(res);
+                    $("#nombre").attr('disabled', 'disabled');
+                }else{
+                    $("#nombre").val("");
+                    $("#nombre").removeAttr('disabled');
+                }
+            }).fail(function(res){
+                alert("Error al mandar tus datos")
+                console.log(res);
+            })
+    });
 
     document.getElementById("formulario").addEventListener("submit", function (e) { 
 
