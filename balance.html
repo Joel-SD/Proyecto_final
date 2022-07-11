@@ -19,10 +19,10 @@
     <div class="info-paciente">
         <table class="info-paciente-tabla">
             <tr>
-                <td>PACIENTE</td>
+                <td>CEDULA</td>
+                <td><input id="cedula" class="form-control input" type="text" placeholder="#-###-####" required></td>
+                <td>NOMBRE</td>
                 <td><input id="nombre" class="form-control input" type="text" placeholder="Nombre Completo" required></td>
-                <td>FECHA</td>
-                <td><input class="form-control input fecha" value="" id="fecha" type="datetime-local" required></td>
             </tr>
             <tr>
                 <td>SISTEMA</td>
@@ -31,8 +31,14 @@
                     <option value="1">Baxter</option>
                     <option value="2">Fresenius Medical Care</option>
                 </select></td>
-                <td>P/A</td>
+                <td style="text-align: right">P/A</td>
                 <td style="display: flex;"><input id="sistolica" class="form-control input presion" type="number" min="80" placeholder="Sistólica" required><span style="margin-right: 3%;">/</span><input id="diastolica" class="form-control input presion" type="number" min="60" placeholder="Diastólica" required></td>
+            </tr>
+            <tr>
+                <td style="text-align: right">FECHA</td>
+                <td><input class="form-control input fecha" value="" id="fecha" type="datetime-local" required></td>
+                <td></td>
+                <td></td>
             </tr>
         </table>
     </div>

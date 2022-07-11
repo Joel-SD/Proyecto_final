@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     let sumaDrenaje = 0;
+    let aux =0;
     let contTurbio =0;
 
     //* Oculta Ventanas y Botones Inicialmente
@@ -34,6 +35,31 @@ $(document).ready(function(){
         }
     });
 
+    $("#cedula").keyup(function (){
+
+        $.ajax({
+            url: 'controller/buscarPaciente.php',
+            type: 'POST',
+            data: {cedula: $("#cedula").val()},
+    
+        })
+        .done(function(res){
+            if (!res == "") {
+                alert("Usuario en sistema: "+res);
+                $("#nombre").val(res);
+                $("#nombre").attr('disabled', 'disabled');
+            }else{
+                $("#nombre").val("");
+                $("#nombre").removeAttr('disabled');
+            }
+            
+        })
+        .fail(function(res){
+            alert(res);
+        })
+
+    });
+
     $("#sistolica").change(function(){
         if ($("#sistolica").val() < 80) {
             $("#sistolica").val(80);
@@ -60,7 +86,9 @@ $(document).ready(function(){
 
         calcPresion($("#sistolica").val(),$("#diastolica").val());
 
-        almacenarData();
+        console.log( $("#sistema option:selected").val())
+        //almacenarData();
+        guardarBalance(aux);
 
         sumaDrenaje = 0;
 
@@ -92,6 +120,8 @@ $(document).ready(function(){
         }
 
         $("#TOTAL_INFUSION").html("<p>8000 ml</p>");
+
+        aux = suma;
 
         $("#TOTAL_DRENAJE").html("<p>"+suma+" ml</p>");
 
@@ -202,7 +232,44 @@ $(document).ready(function(){
     }
 
     //* Almacena Datos de Manera Local */
-    function almacenarData(){
+    function guardarBalance(sumaDrenaje){
+
+        $.ajax({
+            type: "POST",
+            url: "controller/guardarBalance.php",
+            data: {
+                idPaciente: $("#cedula").val(),
+                nombre: $("#nombre").val(),
+                idSistema: $("#sistema option:selected").val(),
+                presionArterial: $("#sistolica").val() + "/" + $("#diastolica").val(),
+                fecha: $("#fecha").val(),
+                concentracion1: $("#concentracion1 option:selected").text(),
+                concentracion2: $("#concentracion2 option:selected").text(),
+                concentracion3: $("#concentracion3 option:selected").text(),
+                concentracion4: $("#concentracion4 option:selected").text(),
+                drenaje1: $("#DRENAJE1").val(),
+                drenaje2: $("#DRENAJE2").val(),
+                drenaje3: $("#DRENAJE3").val(),
+                drenaje4: $("#DRENAJE4").val(),
+                condicion1: $("#condicion1 option:selected").text(),
+                condicion2: $("#condicion2 option:selected").text(),
+                condicion3: $("#condicion3 option:selected").text(),
+                condicion4: $("#condicion4 option:selected").text(),
+                balance1: Number(2000 - $("#DRENAJE1").val()),
+                balance2: Number(2000 - $("#DRENAJE2").val()),
+                balance3: Number(2000 - $("#DRENAJE3").val()),
+                balance4: Number(2000 - $("#DRENAJE4").val()),
+                totalDrenaje: sumaDrenaje,
+                totalBalance: Number(8000 - sumaDrenaje)
+            }
+        }).done(function(res){
+            alert(res);
+            //location.reload();
+        }).fail(function(res){
+            alert("Error al mandar tus datos")
+            console.log(res);
+        })
+
         const myObj = { 
             nombre: $("#nombre").val(),
             fecha: $("#fecha").val(),

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- CSS only -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+ <!-- JavaScript Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+ <!--<link href="diseno2.css" rel="stylesheet" type="text/css">-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
+</head>
+
+<body style="background-color: #a7c2eb;" class="justify-content-center align-intems-center" style="height: 105vh;">
+
+
+    <div class="container bg-white rounded shadow p-4 col-x-4 col-lg-4">
+
+        <h1 class="w-100 text-center mb-4">Registro de cita extraodinaria</h1><br>
+
+    <form class="form-selected" method="post" id="formulario">
+
+<div class="mb-2">
+    <label for="nombre" class="form-label">Cedula del paciente</label>
+    <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Escriba su cedula aqui">
+</div>
+<div class="mb-3">
+    <label for="nombre" class="form-label">Nombre del paciente</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba su nombre aqui">
+</div>
+<br>
+<label for="esp" class="form-label">Especialidad</label>
+<select class="form-select" aria-label="Default select example" id="esp" name="esp">
+    <option selected hidden>Seleccione la especialidad</option>
+    <option>DIALISIS P.</option>
+    <option>HEMODIALISIS</option>
+  </select><br>
+  <label for="medico" class="form-label">Médico</label>
+  <select class="form-select" aria-label="Default select example" id="medico" name="medico">
+    <option selected hidden>Seleccione el medico</option>
+    <option >MD-MEDICO GENERAL</option>
+    <option >NF-ROCIO ARROYO</option>
+    <option >NF-NADJI NOVOA</option>
+    <option >EF-ENFERMERIA</option>
+  </select><br>
+  <label for="motivo" class="form-label">Motivo</label>
+  <select class="form-select" aria-label="Default select example" id="motivo" name="motivo">
+    <option selected hidden>Selecciones el motivo</option>
+    <option >REVISION GENERAL</option>
+    <option >CAMBIO DE LINEA</option>
+    <option >CURACION CATETER</option>
+    <option >CONTROL ENFERMERIA</option>
+    <option >OTRO</option>
+  </select><br>
+<div class="mb-3" id="ocultar">
+    <label for="otro" class="form-label">Otro</label>
+    <textarea class="form-control" id="otro" name="otro" rows="3"></textarea>
+</div>
+    <input class="btn btn-primary w-100" type="submit" value="Enviar datos" id="btncita">
+
+</form>
+
+</div>
+
+
+
+<script type="text/Javascript" src="./scripts/citas.js">
+</script>
+
+      
+</body>
+
+
+</html>

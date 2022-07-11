@@ -135,7 +135,7 @@ button {
     margin-bottom: 10px;
 }
 
-.email{
+.email {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -143,7 +143,7 @@ button {
     justify-content: center;
 }
 
-form{
+form {
     background: gainsboro;
     display: flex;
     flex-direction: column;
@@ -153,7 +153,7 @@ form{
     border-radius: 10px;
 }
 
-form input, form textarea{
+form input, form textarea {
     border: 0;
     margin: 10px 0;
     padding: 20px;
@@ -162,7 +162,7 @@ form input, form textarea{
     font-size: 16px;
 }
 
-#btn{
+#btn {
     padding: 15px;
     background: rgb(55, 152, 177);
     color: beige;

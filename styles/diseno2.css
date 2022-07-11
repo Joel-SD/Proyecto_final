@@ -1,0 +1,18 @@
+a{
+    color:#ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    color: #ffffff;
+}
+
+body{
+    background-color: #a7c2eb;
+    text-align: center;
+}
+
+#centrari{
+    align-items: center;
+}
