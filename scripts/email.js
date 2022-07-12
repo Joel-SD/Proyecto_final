@@ -11,17 +11,17 @@ $(document).ready(function(){
   }
   
   //Funcion para enviar el email, proporcionado por el recurso STMP
-  function enviarEmail(){
-      Email.send({
-          Host : "smtp.elasticemail.com",
-          Username : "alfonsodelcid14@gmail.com",
-          Password : "2A2B25BA300EA0B73D5CF394B559FFB615E3",
-          To : document.getElementById("destinatario").value,
-          From : "alfonsodelcid14@gmail.com",
-          Subject : document.getElementById("asunto").value,
-          Body : document.getElementById("mensaje").value 
-      }).then(
-        _message => alert("Mensaje enviado satisfactoriamente")
-      );
-  }
+  $("#detalle").one("click", function enviarEmail(){
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "alfonsodelcid14@gmail.com",
+        Password : "2A2B25BA300EA0B73D5CF394B559FFB615E3",
+        To : document.getElementById("destinatario").value,
+        From : "alfonsodelcid14@gmail.com",
+        Subject : document.getElementById("asunto").value,
+        Body : document.getElementById("mensaje").value 
+    }).then(
+      _message => alert("Mensaje enviado satisfactoriamente")
+    );
+})
   
