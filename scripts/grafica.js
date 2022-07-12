@@ -58,7 +58,7 @@
                             plugins: {
                                 title: {
                                     display: true,
-                                    text: 'Cédula: ' + response.cedula + '    Paciente: ' + response.nombre + "    Sistema: " + response.sistema+ "     Fecha: " + response.fecha.substr(0,10) + "    Hora: " + response.fecha.substr(11,5),
+                                    text: 'Cédula: ' + response.id_paciente + '    Paciente: ' + response.nombre + "    Sistema: " + response.descripcion+ "     Fecha: " + response.fecha.substr(0,10) + "    Hora: " + response.fecha.substr(11,5),
                                     font: {
                                         family: 'Helvetica',
                                         size: 20,
