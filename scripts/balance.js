@@ -157,9 +157,7 @@ $(document).ready(function(){
 
    $("#descargar").click(function(){
         var popout = window.open("./pdfReporte.html", '_blank', 'toolbar=0,location=0,menubar=0');
-        window.setTimeout(function(){
-            popout.close();
-        }, 500);
+        
    });
     
 
